@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?fileVersion 4.0.0?><cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+	<storageModule moduleId="org.eclipse.cdt.core.settings">
+		<cconfiguration id="cdt.managedbuild.toolchain.gnu.base.1605063562">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.toolchain.gnu.base.1605063562" moduleId="org.eclipse.cdt.core.settings" name="Default">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.GNU_ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration buildProperties="" description="" id="cdt.managedbuild.toolchain.gnu.base.1605063562" name="Default" optionalBuildProperties="" parent="org.eclipse.cdt.build.core.emptycfg">
+					<folderInfo id="cdt.managedbuild.toolchain.gnu.base.1605063562.1242954280" name="/" resourcePath="">
+						<toolChain id="cdt.managedbuild.toolchain.gnu.base.1766086453" name="Linux GCC" superClass="cdt.managedbuild.toolchain.gnu.base">
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.GNU_ELF" id="cdt.managedbuild.target.gnu.platform.base.742805372" name="Debug Platform" osList="linux,hpux,aix,qnx" superClass="cdt.managedbuild.target.gnu.platform.base"/>
+							<builder autoBuildTarget="all" buildPath="${workspace_loc:/qtoy}/build/" cleanBuildTarget="clean" enableAutoBuild="false" enableCleanBuild="true" enabledIncrementalBuild="true" id="cdt.managedbuild.target.gnu.builder.base.564724827" incrementalBuildTarget="all" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="Gnu Make Builder" parallelBuildOn="true" parallelizationNumber="optimal" superClass="cdt.managedbuild.target.gnu.builder.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.archiver.base.213722311" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.base.110556181" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.base">
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.compiler.option.include.paths.1506153967" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="/opt/intel/oneapi/tbb/2021.8.0/env/../include"/>
+									<listOptionValue builtIn="false" value="/opt/intel/oneapi/mpi/2021.8.0//include"/>
+									<listOptionValue builtIn="false" value="/opt/intel/oneapi/ipp/2021.7.0/include"/>
+									<listOptionValue builtIn="false" value="/opt/intel/oneapi/dpl/2022.0.0/linux/include"/>
+									<listOptionValue builtIn="false" value="/opt/intel/oneapi/dpcpp-ct/2023.0.0/include"/>
+									<listOptionValue builtIn="false" value="/opt/intel/oneapi/dev-utilities/2021.8.0/include"/>
+									<listOptionValue builtIn="false" value="/opt/intel/oneapi/ccl/2021.8.0/include/cpu_gpu_dpcpp"/>
+									<listOptionValue builtIn="false" value="/usr/include/qt6"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.198281701" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.c.compiler.base.1859527048" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.base">
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.c.compiler.option.include.paths.776836876" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="/opt/intel/oneapi/tbb/2021.8.0/env/../include"/>
+									<listOptionValue builtIn="false" value="/opt/intel/oneapi/mpi/2021.8.0//include"/>
+									<listOptionValue builtIn="false" value="/opt/intel/oneapi/ipp/2021.7.0/include"/>
+									<listOptionValue builtIn="false" value="/opt/intel/oneapi/dpl/2022.0.0/linux/include"/>
+									<listOptionValue builtIn="false" value="/opt/intel/oneapi/dpcpp-ct/2023.0.0/include"/>
+									<listOptionValue builtIn="false" value="/opt/intel/oneapi/dev-utilities/2021.8.0/include"/>
+									<listOptionValue builtIn="false" value="/opt/intel/oneapi/ccl/2021.8.0/include/cpu_gpu_dpcpp"/>
+									<listOptionValue builtIn="false" value="/usr/include/qt"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1052765088" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.c.linker.base.1633484131" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.base.1612251265" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.base">
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.1165489976" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+								</inputType>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.assembler.base.2012319097" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.base">
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.both.asm.option.include.paths.2077870040" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="/opt/intel/oneapi/tbb/2021.8.0/env/../include"/>
+									<listOptionValue builtIn="false" value="/opt/intel/oneapi/mpi/2021.8.0//include"/>
+									<listOptionValue builtIn="false" value="/opt/intel/oneapi/ipp/2021.7.0/include"/>
+									<listOptionValue builtIn="false" value="/opt/intel/oneapi/dpl/2022.0.0/linux/include"/>
+									<listOptionValue builtIn="false" value="/opt/intel/oneapi/dpcpp-ct/2023.0.0/include"/>
+									<listOptionValue builtIn="false" value="/opt/intel/oneapi/dev-utilities/2021.8.0/include"/>
+									<listOptionValue builtIn="false" value="/opt/intel/oneapi/ccl/2021.8.0/include/cpu_gpu_dpcpp"/>
+									<listOptionValue builtIn="false" value="/usr/include/qt"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.598698158" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+							</tool>
+						</toolChain>
+					</folderInfo>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+			<storageModule buildDir="build/${ConfigName}" moduleId="de.marw.cdt.cmake.core.settings">
+				<options/>
+				<defs/>
+				<undefs/>
+			</storageModule>
+		</cconfiguration>
+	</storageModule>
+	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+		<project id="qtoy.null.949041460" name="qtoy"/>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+	<storageModule moduleId="refreshScope" versionNumber="2">
+		<configuration configurationName="Default">
+			<resource resourceType="PROJECT" workspacePath="/qtoy"/>
+		</configuration>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.toolchain.gnu.base.1605063562;cdt.managedbuild.toolchain.gnu.base.1605063562.1242954280;cdt.managedbuild.tool.gnu.cpp.compiler.base.110556181;cdt.managedbuild.tool.gnu.cpp.compiler.input.198281701">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.toolchain.gnu.base.1605063562;cdt.managedbuild.toolchain.gnu.base.1605063562.1242954280;cdt.managedbuild.tool.gnu.c.compiler.base.1859527048;cdt.managedbuild.tool.gnu.c.compiler.input.1052765088">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+	</storageModule>
+</cproject>

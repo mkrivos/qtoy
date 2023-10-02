@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resources/helloworld-transparent.png</file>
+        <file>resources/Serif.png</file>
+        <file>resources/glyph33.png</file>
+        <file>resources/glyph34.png</file>
+        <file>resources/glyph35.png</file>
+        <file>resources/glyph36.png</file>
+        <file>resources/glyph37.png</file>
+        <file>resources/glyph38.png</file>
+        <file>resources/glyph39.png</file>
+        <file>resources/glyph40.png</file>
+        <file>resources/glyph41.png</file>
+        <file>resources/glyph42.png</file>
+    </qresource>
+</RCC>
