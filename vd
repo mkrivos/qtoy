@@ -1,0 +1,9 @@
+export VCPKG_ROOT=/home/spare/vcpkg
+export VCPKG_MAX_CONCURRENCY=`nproc`
+export VULKAN_SDK=/usr
+
+export CC=clang
+export CXX=clang++
+
+cmake -B build -S . -DCMAKE_TOOLCHAIN_FILE=$VCPKG_ROOT/scripts/buildsystems/vcpkg.cmake -DCMAKE_BUILD_TYPE=Debug
+cmake --build build -j`nproc`

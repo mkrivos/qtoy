@@ -9,8 +9,8 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    ui->scaleSpinBox->setValue(16);
-    ui->functionSpinBox->setValue(5);
+    ui->scaleSpinBox->setValue(4);
+    ui->functionSpinBox->setValue(3);
 
     resize(1200, 800);
     setCentralWidget(new CentralWidget(this));

@@ -15,9 +15,6 @@ using namespace glm;
 
 vec2 iResolution;
 
-int chX = 32;
-int chY = 32;
-
 inline float sdf_circle(vec2 center, float radius, vec2 point)
 {
     return length(point - center) - radius;
@@ -86,7 +83,7 @@ float median(float r, float g, float b)
     return max(min(r, g), min(max(r, g), b));
 }
 
-inline void mainImage(const ShaderParameters& params, vec4& color, vec2 coord, gli::sampler2d<float>& sampler, gli::sampler2d<float>& sampler2)
+inline void mainImage(const ShaderParameters& params, vec4& color, vec2 coord, gli::sampler2d<float>& sampler)
 {
     int function = params.function;
 
@@ -134,55 +131,18 @@ inline void mainImage(const ShaderParameters& params, vec4& color, vec2 coord, g
         vec4 background(0.6, 0.66, 0.6, 1);
         color = background;
 
-        vec2 center = vec2(40, 40);
+        vec2 center = vec2(40.5, 40.2);
         vec2 half_size(28, 14);
         vec4 fg_color(0.3f, 0.2f, 1.0f, 1.0f);
 
         {
             float dist = sdf_rect(center, half_size, coord);
-            dist = sdf_border(4, 4, dist);
-            float f = fill_factor(dist, 1);
+            dist = sdf_border(0.5, 0.5, dist);
+            float f = fill_factor(dist, 0.5);
             color = composite(color, apply_factor(fg_color, f));
         }
     }
     else if (function == 4)
-    {
-        vec4 bgColor(1.0f, 0.0f, 0.0f, 1.0f);
-        vec4 fgColor(0.0f, 0.0f, 0.0f, 1.0f);
-        const float overScale = 0.25;
-        float screenPxRange = 12;
-
-        auto msd = sampler.texture_lod({fmod(coord.x, chX*overScale)/overScale/chX, fmod(coord.y, chY*overScale)/overScale/chY}, 0);
-        float sd = median(msd.r, msd.g, msd.b);
-        float screenPxDistance = screenPxRange*(sd - 0.5);
-        float opacity = clamp(screenPxDistance + 0.5, 0.0, 1.0);
-
-        color = mix(bgColor, fgColor, opacity);
-    }
-    else if (function == 5)
-    {
-        vec4 bgColor(1.0f, 0.0f, 0.0f, 1.0f);
-        vec4 fgColor(0.0f, 0.0f, 0.0f, 1.0f);
-        float gamma = params.gamma;
-        float weight = params.weight;
-        float t0 = params.params[0];
-        float t1 = params.params[1];
-        float fontScale = params.fontSize / 24.0;
-
-        vec2 uv = {coord.x / params.serifSize.x, coord.y / params.serifSize.y};
-        uv /= fontScale;
-        float sd = -(sampler2.texture_lod(uv, 0).r - 0.5) * weight;
-        auto alpha = smoothstep(t0, t1, sd);
-        alpha = pow(alpha, gamma);
-#if VERBOSE
-        if (sd != 0)
-            std::cout << sd << ":" << alpha << " ";
-        if (coord.x == 15)
-            std::cout << std::endl;
-#endif
-        color = mix(bgColor, fgColor, alpha);
-    }
-    else if (function == 10)
     {
         // default fancy stuff
         vec2 uv = coord / iResolution.xy();
@@ -225,14 +185,12 @@ void computeFrame(const ShaderParameters& params)
     int height = params.resolution.y;
     int count = width * height;
 
-    /*
-    BLImage bmp = generate('a', chX, chY);
     gli::texture2d texture{
         gli::FORMAT_R8_UNORM_PACK8,
-        gli::texture2d::extent_type(bmp.width(), bmp.height())
+        gli::texture2d::extent_type(32,32)
     };
     gli::sampler2d<float> sampler(texture, gli::wrap::WRAP_CLAMP_TO_EDGE, gli::filter::FILTER_LINEAR, gli::filter::FILTER_LINEAR);
-
+/*
     BLImageData dataOut;
     bmp.getData(&dataOut);
 
@@ -241,14 +199,14 @@ void computeFrame(const ShaderParameters& params)
         dataOut.pixelData,
         texture.size()
     );
-*/
+
     gli::texture2d texture2{
         gli::FORMAT_R8_UNORM_PACK8,
         gli::texture2d::extent_type(params.serifSize.x, params.serifSize.y)
     };
     gli::sampler2d<float> sampler2(texture2, gli::wrap::WRAP_CLAMP_TO_EDGE, gli::filter::FILTER_LINEAR, gli::filter::FILTER_LINEAR);
     memcpy(texture2.data(), params.serif, params.serifSize.x*params.serifSize.y);
-
+*/
     // Uniforms
     iResolution = params.resolution;
 
@@ -258,7 +216,7 @@ void computeFrame(const ShaderParameters& params)
     for (int i = 0; i < count; i++)
     {
         auto& image = params.image[i];
-        mainImage(params, image, vec2(i % width, i / width), sampler2, sampler2);
+        mainImage(params, image, vec2(i % width, i / width), sampler);
         // Force 100% alpha
         image.a = 1;
     }

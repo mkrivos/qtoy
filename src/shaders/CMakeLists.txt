@@ -12,7 +12,7 @@ add_library(shaders SHARED
 
 target_link_libraries(shaders PRIVATE glm::glm gli)
 target_include_directories(shaders PUBLIC ../)
-target_link_libraries(shaders PRIVATE Poco::Foundation blend2d::blend2d)
+target_link_libraries(shaders PRIVATE Poco::Foundation blend2d::blend2d OpenMP::OpenMP_CXX)
 
 set_source_files_properties(shaders.cpp PROPERTIES COMPILE_DEFINITIONS GLM_FORCE_SWIZZLE=1)
 
